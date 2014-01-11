@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util');
 var path = require('path');
+var fs = require('fs-extra');
 var yeoman = require('yeoman-generator');
 
 
@@ -50,11 +51,13 @@ NopejsGenerator.prototype.askFor = function askFor() {
 };
 
 NopejsGenerator.prototype.app = function app() {
-  this.mkdir('app');
-  this.mkdir('app/templates');
-
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
+  this.copy('.bowerrc');
+};
+
+NopejsGenerator.prototype.gruntfile = function gruntfile() {
+  this.template('Gruntfile.js');
 };
 
 NopejsGenerator.prototype.projectfiles = function projectfiles() {
@@ -63,5 +66,13 @@ NopejsGenerator.prototype.projectfiles = function projectfiles() {
 };
 
 NopejsGenerator.prototype.nopejsFiles = function nopejsFiles() {
-    this.bowerInstall("shakeelmohamed/nopejs", { save: true });
+    this.bowerInstall("shakeelmohamed/nopejs", { save: true }, function(){
+      fs.copy('./bower_components/nopejs', './', function (err) {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log("success!");
+        }
+      });
+    });
 };
