@@ -72,6 +72,11 @@ NopejsGenerator.prototype.nopejsFiles = function nopejsFiles() {
           console.error(err);
         } else {
           console.log("success!");
+          fs.remove('./bower_components', function(err){
+            if (err) return console.error(err);
+
+            console.log("success!")
+          });
         }
       });
     });
