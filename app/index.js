@@ -24,7 +24,6 @@ NopejsGenerator.prototype.askFor = function askFor() {
   console.log(this.yeoman);
 
   var prompts = [
-  //]; /*
     {
       name: 'packageName',
       message: 'What would you like to name this package? (this will be slugified)'
@@ -38,13 +37,11 @@ NopejsGenerator.prototype.askFor = function askFor() {
       message: 'Who is the site author?'
     }
   ];
-//*/
+
   this.prompt(prompts, function (props) {
-    ///*
     this.packageName = props.packageName;
     this.siteName = props.siteName;
     this.siteAuthor = props.siteAuthor;
-    //*/
 
     cb();
   }.bind(this));
@@ -52,7 +49,6 @@ NopejsGenerator.prototype.askFor = function askFor() {
 
 NopejsGenerator.prototype.app = function app() {
   this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
   this.copy('.bowerrc');
 };
 
@@ -61,23 +57,22 @@ NopejsGenerator.prototype.gruntfile = function gruntfile() {
 };
 
 NopejsGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
 };
 
 NopejsGenerator.prototype.nopejsFiles = function nopejsFiles() {
-    this.bowerInstall("shakeelmohamed/nopejs", { save: true }, function(){
-      fs.copy('./bower_components/nopejs', './', function (err) {
-        if (err) {
-          console.error(err);
-        } else {
-          console.log("success!");
-          fs.remove('./bower_components', function(err){
-            if (err) return console.error(err);
+  this.bowerInstall("shakeelmohamed/nopejs", { save: true }, function(){
+    fs.copy('./bower_components/nopejs', './', function (err) {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log("success!");
+        fs.remove('./bower_components', function(err){
+          if (err) return console.error(err);
 
-            console.log("success!")
-          });
-        }
-      });
+          console.log("success!")
+        });
+      }
     });
+  });
 };
