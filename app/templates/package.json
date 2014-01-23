@@ -1,5 +1,5 @@
 {
-  "name": "<% _.slugify(appname) %>",
+  "name": "<%= _.slugify(siteName) %>",
   "version": "0.0.1",
   "description": "<%= siteDescription %>",
   "main": "web.js",
@@ -31,7 +31,7 @@
     "egress"
   ],
   "author": {
-    "name": "<%= siteAuthor %>",
+    "name": "<%= siteAuthor %>"
   },
   "engine": {
     "node": "0.10.x"

@@ -12,7 +12,7 @@ describe("Egress generator", function () {
                 return done(err);
             }
 
-            this.app = helpers.createGenerator("Egress:app", [
+            this.app = helpers.createGenerator("egress:app", [
                 "../../app"
             ]);
             done();
@@ -22,8 +22,7 @@ describe("Egress generator", function () {
     it("creates expected files", function (done) {
         var expected = [
             // add files you expect to exist here.
-            ".jshintrc",
-            ".editorconfig"
+            "config.js"
         ];
 
         helpers.mockPrompt(this.app, {
