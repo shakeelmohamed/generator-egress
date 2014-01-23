@@ -1,0 +1,23 @@
+include includes/head
+script.
+    var msg = '!{msg}';
+
+body
+    include includes/nav
+    .container
+        .row.text-center.egress-template
+            h2 Join #{siteName}
+            - if(msg)
+                div.alert.alert-danger
+                    strong #{msg}
+            form.col-xs-4.col-md-offset-4(method="post" action="/join" name="entry_form")
+                p
+                    input(type="text" class="form-control" name="user" id="user" placeholder="Username")
+                p
+                    input(type="text" class="form-control" name="email" id="email" placeholder="Email")
+                p
+                    input(type="password" class="form-control" name="password" id="password" placeholder="Password")
+                p
+                    button(type="submit" class="btn btn-primary btn btn-info" name="register" id="register" value="register") Join
+    
+    include includes/scripts

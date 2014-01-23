@@ -22,11 +22,21 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0",
-    "fs-extra": "*"
+    "yeoman-generator": "~0.14.0"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "jshint": "0.5.x",
+    "mocha": "~1.14.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.3"
+  },
+  "jshintConfig": {
+    "curly": true,
+    "camelcase": true,
+    "indent": 4,
+    "node": true,
+    "quotmark": "double",
+    "trailing": true
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
@@ -35,9 +45,5 @@
     "node": "0.10.x",
     "npm": ">=1.2.10"
   },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+  "license": "MIT"
 }

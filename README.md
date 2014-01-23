@@ -1,4 +1,4 @@
-# generator-nopejs [![Build Status](https://secure.travis-ci.org/shakeelmohamed/generator-nopejs.png?branch=master)](https://travis-ci.org/shakeelmohamed/generator-nopejs)
+# generator-egress [![Build Status](https://secure.travis-ci.org/shakeelmohamed/generator-egress.png?branch=master)](https://travis-ci.org/shakeelmohamed/generator-egress)
 
 A generator for [Yeoman](http://yeoman.io).
 
@@ -23,16 +23,16 @@ $ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-nopejs from npm, run:
+To install generator-egress from npm, run:
 
 ```
-$ npm install -g generator-nopejs
+$ npm install -g generator-egress
 ```
 
 Finally, initiate the generator:
 
 ```
-$ yo nopejs
+$ yo egress
 ```
 
 ### Getting To Know Yeoman
