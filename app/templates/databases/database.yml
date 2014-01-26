@@ -1,0 +1,5 @@
+test:
+    adapter: postgresql
+    database: egress_test
+    username: postgres
+    password: 
