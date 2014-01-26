@@ -1,4 +1,4 @@
 generator-egress
 ================
 
-A Egress site generator for Yeoman.
+An Egress site generator for Yeoman.
