@@ -1,4 +1,4 @@
-generator-nopejs
+generator-egress
 ================
 
-A Nope.js site generator for Yeoman.
+A Egress site generator for Yeoman.
