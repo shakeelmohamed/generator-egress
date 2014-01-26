@@ -5,7 +5,6 @@ module.exports = function(grunt) {
         pkg: packageFile,
         jshint: {
             all: [
-                "Gruntfile.js",
                 "app/index.js",
                 "app/templates/app.js",
                 "app/templates/index.js",

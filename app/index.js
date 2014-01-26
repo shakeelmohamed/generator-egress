@@ -47,17 +47,33 @@ EgressGenerator.prototype.askFor = function askFor() {
 };
 
 EgressGenerator.prototype.app = function app() {
-  
+    var directories = ["controllers", "databases", "jade", "public", "routes"];
 
-  //TODO: add in a readme.md with pre-production steps, and maybe some tests to verify
-    //... these include: setting a better secret, siteName, siteAuthor, etc.
-};
+    for (var d in directories) {
+        this.directory(directories[d]);
+    }
 
-EgressGenerator.prototype.gruntfile = function gruntfile() {
-    this.template("Gruntfile.js");
+    var files = ["app.js", "index.js", "Procfile"];
+
+    for (var f in files) {
+        this.copy(files[f]);
+    }
 };
 
 EgressGenerator.prototype.templateFiles = function projectfiles() {
+    var files = ["config.js", "package.json", "README.md"];
+
+    for (var f in files) {
+        this.template(files[f]);
+    }
+
+    /*
+
     this.template("config.js");
     this.template("package.json");
+    //TODO: in readme.md with pre-production steps, and maybe some tests to verify
+    //... these include: setting a better secret, siteName, siteAuthor, etc.
+    this.template("README.md");
+
+    */
 };

@@ -9,24 +9,6 @@
     "jade": "0.35.0",
     "pg": "2.x"
   },
-  "devDependencies": {
-    "jshint": "0.5.x",
-    "mocha": "1.16.x",
-    "zombie": "2.0.0-alpha24",
-    "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.6.3"
-  },
-  "jshintConfig": {
-    "curly": true,
-    "camelcase": true,
-    "indent": 4,
-    "node": true,
-    "quotmark": "double",
-    "trailing": true
-  },
-  "scripts": {
-    "test": "mocha test/index.js"
-  },
   "keywords": [
     "egress"
   ],
