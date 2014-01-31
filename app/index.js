@@ -38,42 +38,42 @@ EgressGenerator.prototype.askFor = function askFor() {
     ];
 
     this.prompt(prompts, function (props) {
+        
         this.siteName = props.siteName;
         this.siteAuthor = props.siteAuthor;
         this.siteDescription = props.siteDescription;
-
+        
         cb();
     }.bind(this));
 };
 
 EgressGenerator.prototype.app = function app() {
-    var directories = ["controllers", "databases", "jade", "public", "routes"];
+    var done = this.async();
+    
+    this.remote("shakeelmohamed", "egress", "master", function(err, remote) {
+        var directories = ["controllers", "databases", "jade", "public", "routes"];
 
-    for (var d in directories) {
-        this.directory(directories[d]);
-    }
+        for (var d in directories) {
+            remote.directory(directories[d]);
+        }
 
-    var files = ["app.js", "index.js", "Procfile"];
+        var files = ["app.js", "index.js", "Procfile"];
 
-    for (var f in files) {
-        this.copy(files[f]);
-    }
+        for (var f in files) {
+            remote.copy(files[f], ".");
+        }
+        
+        done();
+    },
+    true);
 };
 
 EgressGenerator.prototype.templateFiles = function projectfiles() {
-    var files = ["config.js", "package.json", "README.md"];
+    var localFiles = ["config.js", "package.json", "README.md"];
 
-    for (var f in files) {
-        this.template(files[f]);
+    for (var l in localFiles) {
+        this.template(localFiles[l]);
     }
-
-    /*
-
-    this.template("config.js");
-    this.template("package.json");
     //TODO: in readme.md with pre-production steps, and maybe some tests to verify
     //... these include: setting a better secret, siteName, siteAuthor, etc.
-    this.template("README.md");
-
-    */
 };

@@ -19,12 +19,12 @@ describe("Egress generator", function () {
     });
 
     it("creates expected files", function (done) {
-        var expected = [
-            // template files
+        var templateFiles = [
             "config.js",
             "package.json",
-            "README.md",
-            // copied files
+            "README.md"
+        ];
+        var remoteFiles = [
             "controllers/_404.js",
             "controllers/account.js",
             "controllers/home.js",
@@ -57,9 +57,12 @@ describe("Egress generator", function () {
         helpers.mockPrompt(this.app, {
             "siteName": true
         });
+
         this.app.options["skip-install"] = true;
+
         this.app.run({}, function () {
-            helpers.assertFiles(expected);
+            helpers.assertFiles(templateFiles);
+            helpers.assertFiles(remoteFiles);
             done();
         });
     });
