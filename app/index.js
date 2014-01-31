@@ -60,7 +60,7 @@ EgressGenerator.prototype.app = function app() {
         var files = ["app.js", "index.js", "Procfile"];
 
         for (var f in files) {
-            remote.copy(files[f], ".");
+            remote.copy(files[f], "./"+files[f]);
         }
         
         done();
@@ -69,11 +69,9 @@ EgressGenerator.prototype.app = function app() {
 };
 
 EgressGenerator.prototype.templateFiles = function projectfiles() {
-    var localFiles = ["config.js", "package.json", "README.md"];
+    var localFiles = ["config.js", "package.json", "README.md", ".env"];
 
     for (var l in localFiles) {
         this.template(localFiles[l]);
     }
-    //TODO: in readme.md with pre-production steps, and maybe some tests to verify
-    //... these include: setting a better secret, siteName, siteAuthor, etc.
 };

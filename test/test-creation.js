@@ -3,6 +3,7 @@
 
 var path    = require("path");
 var helpers = require("yeoman-generator").test;
+var assert  = require("assert");
 
 describe("Egress generator", function () {
     beforeEach(function (done) {
@@ -51,18 +52,27 @@ describe("Egress generator", function () {
             "routes/index.js",
             "app.js",
             "index.js",
-            "Procfile"
+            "Procfile",
+            ".env"
         ];
 
-        helpers.mockPrompt(this.app, {
-            "siteName": true
-        });
+        var egressConfig = {
+            "siteName": "Egress-test-site",
+            "siteAuthor": "Shakeel Mohamed",
+            "siteDescription": "Egress test site."
+        };
+
+        helpers.mockPrompt(this.app, egressConfig);
 
         this.app.options["skip-install"] = true;
 
         this.app.run({}, function () {
             helpers.assertFiles(templateFiles);
             helpers.assertFiles(remoteFiles);
+            var generatedConfig = require("./temp/config.js");
+            for(var i in egressConfig) {
+                assert.equal(generatedConfig[i], egressConfig[i]);
+            }
             done();
         });
     });
