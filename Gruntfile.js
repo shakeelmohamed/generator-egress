@@ -5,16 +5,15 @@ module.exports = function(grunt) {
         pkg: packageFile,
         jshint: {
             all: [
+                "Gruntfile.js",
                 "app/index.js",
-                "app/templates/app.js",
-                "app/templates/index.js",
                 "app/templates/config.js",
-                "app/templates/controllers/*.js",
-                "app/templates/routes/*.js",
-                "app/templates/test/*.js"
+                "test/*.js"
             ],
             options: packageFile.jshintConfig
         }
     });
     grunt.loadNpmTasks("grunt-contrib-jshint");
+
+    grunt.registerTask("default", ["jshint"]);
 };
