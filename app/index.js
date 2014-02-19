@@ -5,6 +5,8 @@ var yeoman = require("yeoman-generator");
 
 
 var EgressGenerator = module.exports = function EgressGenerator(args, options, config) {
+    //TODO: what is config?
+
     yeoman.generators.Base.apply(this, arguments);
 
     this.on("end", function () {
@@ -38,7 +40,6 @@ EgressGenerator.prototype.askFor = function askFor() {
     ];
 
     this.prompt(prompts, function (props) {
-        
         this.siteName = props.siteName;
         this.siteAuthor = props.siteAuthor;
         this.siteDescription = props.siteDescription;
@@ -48,24 +49,15 @@ EgressGenerator.prototype.askFor = function askFor() {
 };
 
 EgressGenerator.prototype.app = function app() {
-    var done = this.async();
-    
-    this.remote("shakeelmohamed", "egress", "master", function(err, remote) {
-        var directories = ["controllers", "databases", "jade", "public", "routes"];
+    var directories = ["controllers", "databases", "jade", "public", "routes"];
+    for (var d in directories) {
+        this.directory("../../egress/" + directories[d], directories[d]);
+    }
 
-        for (var d in directories) {
-            remote.directory(directories[d]);
-        }
-
-        var files = ["app.js", "index.js", "Procfile"];
-
-        for (var f in files) {
-            remote.copy(files[f], "./"+files[f]);
-        }
-        
-        done();
-    },
-    true);
+    var files = ["app.js", "index.js", "Procfile"];
+    for (var f in files) {
+        this.copy("../../egress/" + files[f], files[f]);
+    }
 };
 
 EgressGenerator.prototype.templateFiles = function projectfiles() {
