@@ -1,0 +1,3 @@
+[submodule "egress"]
+	path = egress
+	url = git@github.com:shakeelmohamed/egress.git

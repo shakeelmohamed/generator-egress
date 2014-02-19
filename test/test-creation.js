@@ -70,7 +70,7 @@ describe("Egress generator", function () {
             helpers.assertFiles(templateFiles);
             helpers.assertFiles(remoteFiles);
             var generatedConfig = require("./temp/config.js");
-            for(var i in egressConfig) {
+            for (var i in egressConfig) {
                 assert.equal(generatedConfig[i], egressConfig[i]);
             }
             done();
