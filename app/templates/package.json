@@ -2,8 +2,9 @@
   "name": "<%= _.slugify(siteName) %>",
   "version": "0.0.1",
   "description": "<%= siteDescription %>",
-  "main": "web.js",
+  "main": "app.js",
   "dependencies": {
+    "async": "*",
     "bcrypt-nodejs": "0.0.3",
     "express": "3.x",
     "jade": "0.35.0",

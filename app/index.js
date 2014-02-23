@@ -5,8 +5,6 @@ var yeoman = require("yeoman-generator");
 
 
 var EgressGenerator = module.exports = function EgressGenerator(args, options, config) {
-    //TODO: what is config?
-
     yeoman.generators.Base.apply(this, arguments);
 
     this.on("end", function () {
@@ -54,14 +52,14 @@ EgressGenerator.prototype.app = function app() {
         this.directory("../../egress/" + directories[d], directories[d]);
     }
 
-    var files = ["app.js", "index.js", "Procfile"];
+    var files = ["app.js", "Procfile"];
     for (var f in files) {
         this.copy("../../egress/" + files[f], files[f]);
     }
 };
 
 EgressGenerator.prototype.templateFiles = function projectfiles() {
-    var localFiles = ["config.js", "package.json", "README.md", ".env"];
+    var localFiles = ["config.js", "package.json", "README.md", ".env", ".gitignore"];
 
     for (var l in localFiles) {
         this.template(localFiles[l]);

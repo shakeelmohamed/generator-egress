@@ -1,7 +1,6 @@
-var config = {
+module.exports = {
     "siteName": "<%= siteName %>",
     "siteAuthor": "<%= siteAuthor %>",
-    "siteDescription": "<%= siteDescription %>"
+    "siteDescription": "<%= siteDescription %>",
+    "port": 5000
 };
-
-module.exports = config;

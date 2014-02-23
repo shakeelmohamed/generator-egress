@@ -23,7 +23,9 @@ describe("Egress generator", function () {
         var templateFiles = [
             "config.js",
             "package.json",
-            "README.md"
+            "README.md",
+            ".gitignore",
+            ".env"
         ];
         var remoteFiles = [
             "controllers/_404.js",
@@ -33,27 +35,37 @@ describe("Egress generator", function () {
             "controllers/join.js",
             "controllers/login.js",
             "controllers/logout.js",
-            "databases/database.yml",
+            "databases/database.yml", //TODO: I don't need this yml file
             "databases/users.sql",
             "jade/404.jade",
             "jade/account.jade",
+            "jade/forms/join.jade",
+            "jade/forms/login.jade",
             "jade/includes/head.jade",
             "jade/includes/nav.jade",
             "jade/includes/scripts.jade",
             "jade/index.jade",
             "jade/join.jade",
             "jade/login.jade",
-            "public/assets/css/egress.css",
-            "public/assets/js/html5shiv.js",
-            "public/assets/js/jquery-1.10.2.min.map",
-            "public/assets/js/jquery.js",
-            "public/dist/css/bootstrap.min.css",
-            "public/dist/js/bootstrap.min.js",
+            "public/css/bootstrap-theme.css.map",
+            "public/css/bootstrap-theme.min.css",
+            "public/css/bootstrap.css.map",
+            "public/css/bootstrap.min.css",
+            "public/css/egress.css",
+            "public/fonts/glyphicons-halflings-regular.eot",
+            "public/fonts/glyphicons-halflings-regular.svg",
+            "public/fonts/glyphicons-halflings-regular.ttf",
+            "public/fonts/glyphicons-halflings-regular.woff",
+            "public/js/bootstrap.min.js",
+            "public/js/egress-validators.js",
+            "public/js/html5shiv.js",
+            "public/js/jquery-1.10.2.min.map",
+            "public/js/jquery.js",
+            "public/js/validator.min.js",
             "routes/index.js",
+            "routes/utils.js",
             "app.js",
-            "index.js",
-            "Procfile",
-            ".env"
+            "Procfile"
         ];
 
         var egressConfig = {
