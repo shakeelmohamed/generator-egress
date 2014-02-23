@@ -1,0 +1,5 @@
+Description:
+    Create a new egress site.
+
+Example:
+    yo egress
