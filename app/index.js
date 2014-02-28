@@ -5,6 +5,7 @@ var yeoman = require("yeoman-generator");
 
 
 var EgressGenerator = module.exports = function EgressGenerator(args, options, config) {
+
     yeoman.generators.Base.apply(this, arguments);
 
     this.on("end", function () {

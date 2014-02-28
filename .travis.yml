@@ -4,5 +4,5 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-nopejs' ]; then cd .. && eval "mv $currentfolder generator-nopejs" && cd generator-nopejs; fi
+  - if [ "$currentfolder" != 'generator-egress' ]; then cd .. && eval "mv $currentfolder generator-egress" && cd generator-egress; fi
 

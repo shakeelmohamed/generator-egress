@@ -35,7 +35,7 @@ describe("Egress generator", function () {
             "controllers/join.js",
             "controllers/login.js",
             "controllers/logout.js",
-            "databases/database.yml", //TODO: I don't need this yml file
+            "databases/database.yml",
             "databases/users.sql",
             "jade/404.jade",
             "jade/account.jade",
