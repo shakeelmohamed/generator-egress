@@ -8,7 +8,7 @@ I built this with the intention of getting user-based node.js apps scaffolded ou
 
 * [Bootstrap v3.1.1](https://github.com/twbs/bootstrap/releases/tag/v3.1.1)
 * [PostgreSQL](http://www.postgresql.org/)
-* For other dependencies see  [package.json](egress/package.json) in the `egress` submodule
+* For other dependencies see  [package.json](http://github.com/shakeelmohamed/egress/package.json) in the `egress` submodule
 
 ## Getting Started
 
