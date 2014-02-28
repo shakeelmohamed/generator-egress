@@ -1,0 +1,20 @@
+Description:
+    Create a new egress site.
+
+Example:
+    yo egress
+
+    This will the create:
+    app.js
+    config.js
+    package.json
+    Procfile
+    README.md
+    .gitignore
+    .env
+
+    controllers/
+    databases/
+    jade/
+    public/
+    routes/
