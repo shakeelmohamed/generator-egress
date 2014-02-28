@@ -1,9 +1,8 @@
-generator-egress
+generator-egress [![Build Status](https://secure.travis-ci.org/shakeelmohamed/generator-egress.png?branch=master)](https://travis-ci.org/shakeelmohamed/generator-egress)
 ================
 
 An egress site generator for Yeoman.
-=======
-# generator-egress [![Build Status](https://secure.travis-ci.org/shakeelmohamed/generator-egress.png?branch=master)](https://travis-ci.org/shakeelmohamed/generator-egress)
+
 
 A generator for [Yeoman](http://yeoman.io), based on [egress](http://github.com/shakeelmohamed/egress), 
 a minimal [Express](http://expressjs.com/) app template for a user account system.
