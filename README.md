@@ -8,7 +8,7 @@ I built this with the intention of getting user-based node.js apps scaffolded ou
 
 * [Bootstrap v3.1.1](https://github.com/twbs/bootstrap/releases/tag/v3.1.1)
 * [PostgreSQL](http://www.postgresql.org/)
-* For other dependencies see  [package.json](http://github.com/shakeelmohamed/egress/package.json) in the `egress` submodule
+* For other dependencies see  [package.json](http://github.com/shakeelmohamed/egress/blob/master/package.json) in the `egress` submodule
 
 ## Getting Started
 
@@ -50,6 +50,13 @@ Yeoman has a heart of gold. He's a person with feelings and opinions, but he's v
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
+## Issues
+
+* When in doubt, create an issue!
+
+## Contact
+
+You can most easily reach me on twitter [@_Shakeel](http://twitter.com/_Shakeel)
 
 ## License
 
