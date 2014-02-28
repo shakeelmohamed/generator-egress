@@ -1,7 +1,14 @@
 # generator-egress [![Build Status](https://secure.travis-ci.org/shakeelmohamed/generator-egress.png?branch=master)](https://travis-ci.org/shakeelmohamed/generator-egress)
 
-A generator for [Yeoman](http://yeoman.io).
+A generator for [Yeoman](http://yeoman.io), based on [egress](http://github.com/shakeelmohamed/egress), 
+a minimal [Express](http://expressjs.com/) app template for a user account system.
+I built this with the intention of getting user-based node.js apps scaffolded out quickly.
 
+## egress Dependencies
+
+* [Bootstrap v3.1.1](https://github.com/twbs/bootstrap/releases/tag/v3.1.1)
+* [PostgreSQL](http://www.postgresql.org/)
+* For other dependencies see  [package.json](egress/package.json) in the `egress` submodule
 
 ## Getting Started
 
@@ -34,6 +41,8 @@ Finally, initiate the generator:
 ```
 $ yo egress
 ```
+
+After you generate your egress website, look at the generated `README.md` for steps to get started.
 
 ### Getting To Know Yeoman
 
