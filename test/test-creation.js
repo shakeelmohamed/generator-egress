@@ -33,22 +33,20 @@ describe("Egress generator", function () {
             "controllers/home.js",
             "controllers/index.js",
             "controllers/join.js",
-            "controllers/login.js",
-            "controllers/logout.js",
+            "controllers/signin.js",
+            "controllers/signout.js",
             "databases/database.yml",
             "databases/users.sql",
             "jade/404.jade",
             "jade/account.jade",
             "jade/forms/join.jade",
-            "jade/forms/login.jade",
+            "jade/forms/signin.jade",
             "jade/includes/head.jade",
             "jade/includes/nav.jade",
             "jade/includes/scripts.jade",
             "jade/index.jade",
             "jade/join.jade",
-            "jade/login.jade",
-            "public/css/bootstrap-theme.css.map",
-            "public/css/bootstrap-theme.min.css",
+            "jade/signin.jade",
             "public/css/bootstrap.css.map",
             "public/css/bootstrap.min.css",
             "public/css/egress.css",
@@ -69,6 +67,7 @@ describe("Egress generator", function () {
         ];
 
         var egressConfig = {
+            "framework": "bootstrap",
             "siteName": "Egress-test-site",
             "siteAuthor": "Shakeel Mohamed",
             "siteDescription": "Egress test site."
@@ -83,7 +82,9 @@ describe("Egress generator", function () {
             helpers.assertFiles(remoteFiles);
             var generatedConfig = require("./temp/config.js");
             for (var i in egressConfig) {
-                assert.equal(generatedConfig[i], egressConfig[i]);
+                if (egressConfig[i] !== "bootstrap") {
+                    assert.equal(generatedConfig[i], egressConfig[i]);
+                }
             }
             done();
         });

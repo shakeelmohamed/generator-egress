@@ -1,5 +1,11 @@
 # generator-egress changelog
 
+## v0.1.2
+
+### Breaking changes
+
+* Rename `egress` to `egress-bootstrap`
+
 ## v0.1.1
 
 ### Update egress version
