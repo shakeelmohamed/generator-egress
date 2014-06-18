@@ -25,6 +25,16 @@ EgressGenerator.prototype.askFor = function askFor() {
 
     var prompts = [
         {
+            type: "list",
+            name: "framework",
+            message: "Which framework would you like to use?",
+            choices: [{
+              name: "Bootstrap",
+              value: "bootstrap",
+              checked: true
+            }]
+        },
+        {
             name: "siteName",
             message: "What would you like to call your site?"
         },
@@ -39,6 +49,7 @@ EgressGenerator.prototype.askFor = function askFor() {
     ];
 
     this.prompt(prompts, function (props) {
+        this.framework = props.framework;
         this.siteName = props.siteName;
         this.siteAuthor = props.siteAuthor;
         this.siteDescription = props.siteDescription;
@@ -48,14 +59,16 @@ EgressGenerator.prototype.askFor = function askFor() {
 };
 
 EgressGenerator.prototype.app = function app() {
-    var directories = ["controllers", "databases", "jade", "public", "routes"];
-    for (var d in directories) {
-        this.directory("../../egress/" + directories[d], directories[d]);
-    }
+    if (this.framework === "bootstrap") {
+        var bootstrap_directories = ["controllers", "databases", "jade", "public", "routes"];
+        for (var d in bootstrap_directories) {
+            this.directory("../../egress-bootstrap/" + bootstrap_directories[d], bootstrap_directories[d]);
+        }
 
-    var files = ["app.js", "Procfile"];
-    for (var f in files) {
-        this.copy("../../egress/" + files[f], files[f]);
+        var files = ["app.js", "Procfile"];
+        for (var f in files) {
+            this.copy("../../egress-bootstrap/" + files[f], files[f]);
+        }
     }
 };
 
