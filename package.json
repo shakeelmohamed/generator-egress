@@ -22,7 +22,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0"
+    "yeoman-generator": "~0.14.0",
+    "rimraf": "~2.2.8"
   },
   "devDependencies": {
     "jshint": "0.5.x",

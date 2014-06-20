@@ -10,8 +10,12 @@
     "jade": "0.35.0",
     "pg": "2.x"
   },
+  "scripts": {
+    "start": "node app.js"
+  },
   "keywords": [
-    "egress"
+    "egress",
+    "generator-egress"
   ],
   "author": {
     "name": "<%= siteAuthor %>"

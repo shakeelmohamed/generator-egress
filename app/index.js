@@ -28,11 +28,18 @@ EgressGenerator.prototype.askFor = function askFor() {
             type: "list",
             name: "framework",
             message: "Which framework would you like to use?",
-            choices: [{
-              name: "Bootstrap",
-              value: "bootstrap",
-              checked: true
-            }]
+            choices: [
+                {
+                  name: "Twitter Bootstrap 3.1.1",
+                  value: "bootstrap",
+                  checked: true
+                },
+                {
+                  name: "Zurb Foundation 5",
+                  value: "bootstrap",
+                  checked: false
+                }
+            ]
         },
         {
             name: "siteName",
@@ -59,16 +66,19 @@ EgressGenerator.prototype.askFor = function askFor() {
 };
 
 EgressGenerator.prototype.app = function app() {
-    if (this.framework === "bootstrap") {
-        var bootstrap_directories = ["controllers", "databases", "jade", "public", "routes"];
-        for (var d in bootstrap_directories) {
-            this.directory("../../egress-bootstrap/" + bootstrap_directories[d], bootstrap_directories[d]);
+    if (this.framework === "bootstrap" || this.framework === "foundation") {
+        var directories = ["controllers", "databases", "jade", "public", "routes"];
+        for (var d in directories) {
+            this.directory("../../egress-" + this.framework + "/" + directories[d], directories[d]);
         }
 
         var files = ["app.js", "Procfile"];
         for (var f in files) {
-            this.copy("../../egress-bootstrap/" + files[f], files[f]);
+            this.copy("../../egress-" +  this.framework + "/" + files[f], files[f]);
         }
+    }
+    else {
+        throw new Error("Somehow you selected an invalid framework, don't do that!");
     }
 };
 

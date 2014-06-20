@@ -1,4 +1,4 @@
-<%= siteName %>: built with egress
+<%= siteName %>: built with generator-egress
 ====
 
 ### Getting Started:
