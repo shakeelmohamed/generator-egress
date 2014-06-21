@@ -1,3 +1,6 @@
 [submodule "egress-bootstrap"]
 	path = egress-bootstrap
 	url = git://github.com/shakeelmohamed/egress-bootstrap.git
+[submodule "egress-foundation"]
+	path = egress-foundation
+	url = git://github.com/shakeelmohamed/egress-foundation.git
