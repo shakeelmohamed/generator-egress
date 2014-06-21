@@ -36,7 +36,7 @@ EgressGenerator.prototype.askFor = function askFor() {
                 },
                 {
                   name: "Zurb Foundation 5",
-                  value: "bootstrap",
+                  value: "foundation",
                   checked: false
                 }
             ]
