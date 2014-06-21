@@ -4,11 +4,18 @@ A generator for [Yeoman](http://yeoman.io), based on [egress-bootstrap](http://g
 a minimal [Express](http://expressjs.com/) app template for a user account system.
 I built this with the intention of getting user-based node.js apps scaffolded out quickly.
 
+## Common Dependencies
+* [PostgreSQL](http://www.postgresql.org/)
+
 ## egress-bootstrap Dependencies
 
-* [Bootstrap v3.1.1](https://github.com/twbs/bootstrap/releases/tag/v3.1.1)
-* [PostgreSQL](http://www.postgresql.org/)
+* [Twitter Bootstrap v3.1.1](https://github.com/twbs/bootstrap/releases/tag/v3.1.1)
 * For other dependencies see  [package.json](http://github.com/shakeelmohamed/egress-bootstrap/blob/master/package.json) in the `egress-bootstrap` submodule
+
+## egress-foundation Dependencies
+
+* [ZURB Foundation 5.3](http://foundation.zurb.com/develop/download.html)
+* For other dependencies see  [package.json](http://github.com/shakeelmohamed/egress-foundation/blob/master/package.json) in the `egress-foundation` submodule
 
 ## Getting Started
 
