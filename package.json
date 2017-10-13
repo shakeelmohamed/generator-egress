@@ -19,10 +19,13 @@
     "url": "git://github.com/shakeelmohamed/generator-egress.git"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0"
+    "yeoman-generator": "~0.24.1",
+    "snyk": "^1.42.6"
   },
   "devDependencies": {
     "jshint": "0.5.x",
@@ -49,5 +52,6 @@
     "node": "0.10.x",
     "npm": ">=1.2.10"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
